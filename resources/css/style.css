@@ -1,0 +1,8 @@
+.masthead {
+    height: 100vh;
+    min-height: 500px;
+    background-image: url('../../public/storage/img/ian-schneider-TamMbr4okv4-unsplash.jpg');
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+  }
