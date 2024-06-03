@@ -20,15 +20,23 @@
             <a class="nav-link" href="{{route('login')}}">Accedi</a>
           </li>
           @endguest
+          @auth
+          <li class="nav-item">
+            <form action="{{route('logout')}}"
+            method="POST">
+            @csrf
+            <button class="nav-link" type="submit">Logout</button>
+          </form>
+        </li>
+        @endauth
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
+              Categorie
             </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <ul class="dropdown-menu">  
+             @foreach ($categories as $category)
+             <li><a class="dropdown-item" href="#">{{$category->name}}</a></li> 
+             @endforeach
             </ul>
         </ul>
         
