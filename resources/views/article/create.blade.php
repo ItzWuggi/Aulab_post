@@ -20,13 +20,6 @@
             </div>
             
             <div class="mb-3">
-              <label for="price" class="form-label">Prezzo dell'articolo</label>
-              <div class="d-flex">
-                <input type="text" name="price" class="form-control me-3" id="price" value="{{old('price')}}"> <span>$</span>
-              </div>
-            </div>
-            
-            <div class="mb-3">
               <label for="img" class="form-label">Aggiungi un'immagine dell'articolo</label>
               
               <input type="file" name="img" class="form-control me-3" id="img">
