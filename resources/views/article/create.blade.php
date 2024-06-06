@@ -5,7 +5,7 @@
             <form 
             class="rounded-4 shadow bg-light-subtle p-4 my-5" 
             method="POST" 
-            action="{{route('product.store')}}"
+            action="{{route('article.store')}}"
             enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
