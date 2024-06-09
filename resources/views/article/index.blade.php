@@ -5,6 +5,7 @@
             {{-- foreach con un if interno --}}
             @forelse ($articles as $article)
             <div class="col-8 col-md-5 col-lg-3 my-3 p-3">
+                
                 <div class="card d-block mx-auto">
                     @if (count($article->images))
                     
@@ -16,10 +17,13 @@
                     @endif
                     <div class="card-body d-flex flex-column justify-content-between">
                         <div>
-                            <h5 class="card-title mb-1">Titolo dell'annuncio</h5>
+                            <h5 class="card-title mb-1">{{$article->title}}</h5>
                         </div>
                         <div>
-                            {{-- <p class="card-text text-truncate">Corpo dell'annuncio</p>
+                            <h5 class="card-title mb-1">{{$article->subtitle}}</h5>
+                        </div>
+                        <div>
+                            {{-- <p class="card-text text-truncate">Corpo dell'articolo</p>
                             <a href="{{route('show.articles', compact('article'))}}" class="btn bottone_annuncio2 d-block mx-auto">Vai al dettaglio</a> --}}
                         </div>
                     </div>

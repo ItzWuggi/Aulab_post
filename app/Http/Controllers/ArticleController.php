@@ -43,7 +43,7 @@ class ArticleController extends Controller
             'subtitle'=> $request->subtitle,
             'body'=> $request->body,
             'image'=> $request->file('image')->store('public/images'),
-            'category_id'=> $request->catgeory,
+            'category_id'=> $request->category,
             'user_id'=> Auth::user()->id,
         ]);
         return redirect(route('homepage'))->with('messsage', 'Articolo creato con successo');
