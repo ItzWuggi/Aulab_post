@@ -37,16 +37,23 @@ class ArticleController extends Controller
             'image'=> 'required|image',
             'category'=> 'required',
         ]);
+        
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('images', 'public');
+        } else {
+            $path = null;
+        }
 
-        $article= Article::create([
+       $article = Article::create([
             'title'=> $request->title,
             'subtitle'=> $request->subtitle,
             'body'=> $request->body,
-            'image'=> $request->file('image')->store('public/images'),
+            'image'=> $request->file('image')->store('public/img'),
             'category_id'=> $request->category,
             'user_id'=> Auth::user()->id,
         ]);
-        return redirect(route('homepage'))->with('messsage', 'Articolo creato con successo');
+
+        return redirect(route('welcome'))->with('messsage', 'Articolo creato con successo');
     }
 
     /**

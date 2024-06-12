@@ -1,20 +1,20 @@
 <x-layout>
     <x-masthead/>
     <div class="container px-0">
+      
         <div class="row mt-5 justify-content-center">
             {{-- foreach con un if interno --}}
             @forelse ($articles as $article)
             <div class="col-8 col-md-5 col-lg-3 my-3 p-3">
-                
                 <div class="card d-block mx-auto">
-                    @if (count($article->images))
                     
-                    <img src="" class="card-img-top shadow" alt="...">
+                    @if($article->image)
+                    <img src="{{Storage::url($article->image)}}" class="card-img-top shadow" alt="...">
+                @else
+                    <img src="{{Storage::url('/img/default-image.jpg')}}" class="card-img-top shadow" alt="...">
+                @endif
                     
-                    @else
-                    <img src="{{Storage::url('public/img/default-image.jpg')}}" class="card-img-top shadow" alt="...">
                     
-                    @endif
                     <div class="card-body d-flex flex-column justify-content-between">
                         <div>
                             <h5 class="card-title mb-1">{{$article->title}}</h5>

@@ -44,7 +44,8 @@
             
             <button type="submit" class="btn btn-success">Invia dati dell'articolo</button>
           </form>
-          
+          <x-error/>
+          <x-message/>
         </div>
       </div>
     </div>
