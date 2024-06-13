@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use Illuminate\Http\Request;
 
-abstract class Controller
+class PublicController extends Controller
 {
     public function welcome(){
         $articles = Article::orderBy('created_at', 'desc')->get();
