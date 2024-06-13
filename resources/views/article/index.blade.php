@@ -23,8 +23,8 @@
                             <h5 class="card-title mb-1">{{$article->subtitle}}</h5>
                         </div>
                         <div>
-                            {{-- <p class="card-text text-truncate">Corpo dell'articolo</p>
-                            <a href="{{route('show.articles', compact('article'))}}" class="btn bottone_annuncio2 d-block mx-auto">Vai al dettaglio</a> --}}
+                            <p class="card-text text-truncate">Corpo dell'articolo</p>
+                            <a href="{{route('article.show', compact('article'))}}" class="btn bottone_annuncio2 d-block mx-auto">Vai al dettaglio</a>
                         </div>
                     </div>
                 </div>
