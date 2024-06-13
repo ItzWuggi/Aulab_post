@@ -11,7 +11,7 @@
                     @if($article->image)
                     <img src="{{Storage::url($article->image)}}" class="card-img-top shadow" alt="...">
                 @else
-                    <img src="{{Storage::url('/img/default-image.jpg')}}" class="card-img-top shadow" alt="...">
+                    <img src="{{Storage::url('/img/default.png')}}" class="card-img-top shadow" alt="...">
                 @endif
                     
                     
@@ -23,8 +23,12 @@
                             <h5 class="card-title mb-1">{{$article->subtitle}}</h5>
                         </div>
                         <div>
-                            <p class="card-text text-truncate">Corpo dell'articolo</p>
+                            <p class="card-text text-truncate">{{$article->body}}</p>
                             <a href="{{route('article.show', compact('article'))}}" class="btn bottone_annuncio2 d-block mx-auto">Vai al dettaglio</a>
+                        </div>
+                        <div class="card-footer">
+                            <p>Redatto da: {{$article->user->name}}</p>
+                            <p>{{$article->category->name}}</p>
                         </div>
                     </div>
                 </div>
